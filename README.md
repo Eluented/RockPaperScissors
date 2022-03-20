@@ -1,8 +1,8 @@
 # RockPaperScissors :punch: :raised_hand_with_fingers_splayed::v:
 The purpose of this assignment is to utilise javascript with html using the console - this is the second project in the Odin Project. 
 
-## My Website
-
+## :frog: My Website :frog:
+https://eluented.github.io/RockPaperScissors/
 
 ## :whale: Assignment :whale:
 Start a new Git repo for your project.
