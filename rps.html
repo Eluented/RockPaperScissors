@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock, Paper, Scissors Shoot!</title>
 </head>
 <body>
-    
+    <script>
+        function computerPlay(){
+            let play = ["Rock!", "Paper!", "Scissors!"]
+            return play[Math.floor(Math.random()*play.length)];
+        };
+
+        function playRound(playerSelection, computerSelection){
+            if (playerSelection === computerSelection){
+                console.log("It's a TIE what a bummer!")
+                return "Tie!";
+            } else if (playerSelection === "rock" && computerSelection === "Paper!"){
+                console.log("You lose :((, I chose paper you choose rock!")
+                return "You Lose :(";
+            } else if (playerSelection === "rock" && computerSelection === "Scissors!"){
+                console.log("DAMMIT YOU WON! I chose scissors and you chose rock!")
+                return "You WIN!";
+            } else if (playerSelection === "paper" && computerSelection === "Rock!") {
+                console.log("STOP WINNING! You chose paper and I chose rock!")
+                return "You WIN!";
+            } else if (playerSelection === "paper" && computerSelection === "Scissors!") {
+                console.log("damn you lost! I chose scissors and you chose paper!")
+                return "You Lose :(";
+            } else if (playerSelection === "scissors" && computerSelection === "Rock!") {
+                console.log("unlucky geezer! I won, you choose scissors and I chose the almighty rock!")
+                return "You Lose :(";
+            } else if (playerSelection === "scissors" && computerSelection === "Paper!") {
+                console.log("You Won this round! I chose paper and you chose scissors you cheater!")
+                return "You WIN!";
+            }
+        };
+
+
+
+        function game(){
+            let scoreCount = 0;
+
+            for (let i=0; i < 5; i++){
+                let playerSelection = prompt("hey play 5 games of rock, paper and scissors with me! please choose between rock, paper and scissors (all lowercase please)");
+
+                const computerSelection = computerPlay();
+
+                if (playRound(playerSelection, computerSelection) === "You WIN!"){
+                    scoreCount ++;
+                } else {
+                    continue;
+                }
+            }
+            return scoreCount;
+        };
+
+        console.log(`You have won ${game()} time/s!`);
+
+
+
+    </script>
 </body>
 </html>
